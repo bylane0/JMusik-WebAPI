@@ -1,0 +1,288 @@
+2022-04-07 09:37:29.527 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-07 09:37:29.601 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-07 09:37:29.664 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-07 09:37:29.713 -03:00 [Information] Hosting environment: "Development"
+2022-04-07 09:37:29.738 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\source\repos\JMusik\JMusik.WebApi"
+2022-04-07 09:37:33.486 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 09:37:34.208 -03:00 [Information] Executed DbCommand ("32"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+FROM [tienda].[Producto] AS [p]
+WHERE [p].[Estatus] = 1
+ORDER BY [p].[Nombre]"
+2022-04-07 09:52:13.067 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-07 09:52:13.095 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-07 09:52:13.102 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-07 09:52:13.104 -03:00 [Information] Hosting environment: "Development"
+2022-04-07 09:52:13.105 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\source\repos\JMusik\JMusik.WebApi"
+2022-04-07 09:52:41.567 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 09:52:43.257 -03:00 [Information] Executed DbCommand ("33"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Nombre]
+FROM [tienda].[Perfil] AS [p]"
+2022-04-07 09:52:49.154 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 09:52:49.277 -03:00 [Information] Executed DbCommand ("31"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [p].[Id], [p].[Nombre]
+FROM [tienda].[Perfil] AS [p]
+WHERE [p].[Id] = @__id_0"
+2022-04-07 10:18:15.777 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-07 10:18:15.848 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-07 10:18:15.860 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-07 10:18:15.905 -03:00 [Information] Hosting environment: "Development"
+2022-04-07 10:18:15.914 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\source\repos\JMusik\JMusik.WebApi"
+2022-04-07 10:18:29.607 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:18:31.716 -03:00 [Information] Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+WHERE [o].[EstatusOrden] = 1"
+2022-04-07 10:18:40.406 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:18:40.537 -03:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username], [t].[Id], [t].[Cantidad], [t].[OrdenId], [t].[PrecioUnitario], [t].[ProductoId], [t].[Total], [t].[Id0], [t].[Estatus], [t].[FechaRegistro], [t].[Nombre], [t].[Precio]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[Cantidad], [d].[OrdenId], [d].[PrecioUnitario], [d].[ProductoId], [d].[Total], [p].[Id] AS [Id0], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+    FROM [tienda].[DetalleOrden] AS [d]
+    INNER JOIN [tienda].[Producto] AS [p] ON [d].[ProductoId] = [p].[Id]
+) AS [t] ON [o].[Id] = [t].[OrdenId]
+WHERE [o].[EstatusOrden] = 1
+ORDER BY [o].[Id], [u].[Id], [t].[Id]"
+2022-04-07 10:18:47.713 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:18:47.788 -03:00 [Information] Executed DbCommand ("25"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[CantidadArticulos], [t].[EstatusOrden], [t].[FechaActualizacion], [t].[FechaRegistro], [t].[Importe], [t].[UsuarioId], [t].[Id0], [t].[Apellidos], [t].[Email], [t].[Estatus], [t].[Nombre], [t].[Password], [t].[PerfilId], [t].[Username], [t0].[Id], [t0].[Cantidad], [t0].[OrdenId], [t0].[PrecioUnitario], [t0].[ProductoId], [t0].[Total], [t0].[Id0], [t0].[Estatus], [t0].[FechaRegistro], [t0].[Nombre], [t0].[Precio]
+FROM (
+    SELECT TOP(2) [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id] AS [Id0], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username]
+    FROM [tienda].[Orden] AS [o]
+    INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+    WHERE ([o].[Id] = @__id_0) AND ([o].[EstatusOrden] = 1)
+) AS [t]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[Cantidad], [d].[OrdenId], [d].[PrecioUnitario], [d].[ProductoId], [d].[Total], [p].[Id] AS [Id0], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+    FROM [tienda].[DetalleOrden] AS [d]
+    INNER JOIN [tienda].[Producto] AS [p] ON [d].[ProductoId] = [p].[Id]
+) AS [t0] ON [t].[Id] = [t0].[OrdenId]
+ORDER BY [t].[Id], [t].[Id0], [t0].[Id]"
+2022-04-07 10:18:54.229 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:18:54.236 -03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username], [t].[Id], [t].[Cantidad], [t].[OrdenId], [t].[PrecioUnitario], [t].[ProductoId], [t].[Total], [t].[Id0], [t].[Estatus], [t].[FechaRegistro], [t].[Nombre], [t].[Precio]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[Cantidad], [d].[OrdenId], [d].[PrecioUnitario], [d].[ProductoId], [d].[Total], [p].[Id] AS [Id0], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+    FROM [tienda].[DetalleOrden] AS [d]
+    INNER JOIN [tienda].[Producto] AS [p] ON [d].[ProductoId] = [p].[Id]
+) AS [t] ON [o].[Id] = [t].[OrdenId]
+WHERE [o].[EstatusOrden] = 1
+ORDER BY [o].[Id], [u].[Id], [t].[Id]"
+2022-04-07 10:18:58.713 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:18:58.761 -03:00 [Information] Executed DbCommand ("33"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+WHERE ([o].[Id] = @__id_0) AND ([o].[EstatusOrden] = 1)"
+2022-04-07 10:19:08.944 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:19:08.960 -03:00 [Information] Executed DbCommand ("12"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[CantidadArticulos], [t].[EstatusOrden], [t].[FechaActualizacion], [t].[FechaRegistro], [t].[Importe], [t].[UsuarioId], [t].[Id0], [t].[Apellidos], [t].[Email], [t].[Estatus], [t].[Nombre], [t].[Password], [t].[PerfilId], [t].[Username], [t0].[Id], [t0].[Cantidad], [t0].[OrdenId], [t0].[PrecioUnitario], [t0].[ProductoId], [t0].[Total], [t0].[Id0], [t0].[Estatus], [t0].[FechaRegistro], [t0].[Nombre], [t0].[Precio]
+FROM (
+    SELECT TOP(2) [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id] AS [Id0], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username]
+    FROM [tienda].[Orden] AS [o]
+    INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+    WHERE ([o].[Id] = @__id_0) AND ([o].[EstatusOrden] = 1)
+) AS [t]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[Cantidad], [d].[OrdenId], [d].[PrecioUnitario], [d].[ProductoId], [d].[Total], [p].[Id] AS [Id0], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+    FROM [tienda].[DetalleOrden] AS [d]
+    INNER JOIN [tienda].[Producto] AS [p] ON [d].[ProductoId] = [p].[Id]
+) AS [t0] ON [t].[Id] = [t0].[OrdenId]
+ORDER BY [t].[Id], [t].[Id0], [t0].[Id]"
+2022-04-07 10:19:10.348 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:19:10.364 -03:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[CantidadArticulos], [t].[EstatusOrden], [t].[FechaActualizacion], [t].[FechaRegistro], [t].[Importe], [t].[UsuarioId], [t].[Id0], [t].[Apellidos], [t].[Email], [t].[Estatus], [t].[Nombre], [t].[Password], [t].[PerfilId], [t].[Username], [t0].[Id], [t0].[Cantidad], [t0].[OrdenId], [t0].[PrecioUnitario], [t0].[ProductoId], [t0].[Total], [t0].[Id0], [t0].[Estatus], [t0].[FechaRegistro], [t0].[Nombre], [t0].[Precio]
+FROM (
+    SELECT TOP(2) [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id] AS [Id0], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username]
+    FROM [tienda].[Orden] AS [o]
+    INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+    WHERE ([o].[Id] = @__id_0) AND ([o].[EstatusOrden] = 1)
+) AS [t]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[Cantidad], [d].[OrdenId], [d].[PrecioUnitario], [d].[ProductoId], [d].[Total], [p].[Id] AS [Id0], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+    FROM [tienda].[DetalleOrden] AS [d]
+    INNER JOIN [tienda].[Producto] AS [p] ON [d].[ProductoId] = [p].[Id]
+) AS [t0] ON [t].[Id] = [t0].[OrdenId]
+ORDER BY [t].[Id], [t].[Id0], [t0].[Id]"
+2022-04-07 10:19:19.460 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:19:19.464 -03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+WHERE [o].[EstatusOrden] = 1"
+2022-04-07 10:19:20.979 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:19:20.990 -03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+WHERE [o].[EstatusOrden] = 1"
+2022-04-07 10:19:44.869 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:19:44.876 -03:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username], [t].[Id], [t].[Cantidad], [t].[OrdenId], [t].[PrecioUnitario], [t].[ProductoId], [t].[Total], [t].[Id0], [t].[Estatus], [t].[FechaRegistro], [t].[Nombre], [t].[Precio]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[Cantidad], [d].[OrdenId], [d].[PrecioUnitario], [d].[ProductoId], [d].[Total], [p].[Id] AS [Id0], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+    FROM [tienda].[DetalleOrden] AS [d]
+    INNER JOIN [tienda].[Producto] AS [p] ON [d].[ProductoId] = [p].[Id]
+) AS [t] ON [o].[Id] = [t].[OrdenId]
+WHERE [o].[EstatusOrden] = 1
+ORDER BY [o].[Id], [u].[Id], [t].[Id]"
+2022-04-07 10:20:56.621 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-07 10:20:56.648 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-07 10:20:56.655 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-07 10:20:56.657 -03:00 [Information] Hosting environment: "Development"
+2022-04-07 10:20:56.658 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\source\repos\JMusik\JMusik.WebApi"
+2022-04-07 10:21:10.665 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:21:11.819 -03:00 [Information] Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+WHERE [o].[EstatusOrden] = 1"
+2022-04-07 10:22:16.558 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-07 10:22:16.590 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-07 10:22:16.596 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-07 10:22:16.598 -03:00 [Information] Hosting environment: "Development"
+2022-04-07 10:22:16.600 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\source\repos\JMusik\JMusik.WebApi"
+2022-04-07 10:22:27.297 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:22:28.251 -03:00 [Information] Executed DbCommand ("40"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+WHERE [o].[EstatusOrden] = 1"
+2022-04-07 10:23:22.935 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:23:24.582 -03:00 [Information] Executed DbCommand ("50"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+WHERE ([o].[Id] = @__id_0) AND ([o].[EstatusOrden] = 1)"
+2022-04-07 10:26:22.318 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-07 10:26:22.350 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-07 10:26:22.358 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-07 10:26:22.360 -03:00 [Information] Hosting environment: "Development"
+2022-04-07 10:26:22.362 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\source\repos\JMusik\JMusik.WebApi"
+2022-04-07 10:27:54.138 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-07 10:27:54.171 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-07 10:27:54.178 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-07 10:27:54.181 -03:00 [Information] Hosting environment: "Development"
+2022-04-07 10:27:54.183 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\source\repos\JMusik\JMusik.WebApi"
+2022-04-07 10:27:58.072 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:27:59.258 -03:00 [Information] Executed DbCommand ("49"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username], [t].[Id], [t].[Cantidad], [t].[OrdenId], [t].[PrecioUnitario], [t].[ProductoId], [t].[Total], [t].[Id0], [t].[Estatus], [t].[FechaRegistro], [t].[Nombre], [t].[Precio]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[Cantidad], [d].[OrdenId], [d].[PrecioUnitario], [d].[ProductoId], [d].[Total], [p].[Id] AS [Id0], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+    FROM [tienda].[DetalleOrden] AS [d]
+    INNER JOIN [tienda].[Producto] AS [p] ON [d].[ProductoId] = [p].[Id]
+) AS [t] ON [o].[Id] = [t].[OrdenId]
+WHERE [o].[EstatusOrden] = 1
+ORDER BY [o].[Id], [u].[Id], [t].[Id]"
+2022-04-07 10:29:17.486 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-07 10:29:17.518 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-07 10:29:17.525 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-07 10:29:17.527 -03:00 [Information] Hosting environment: "Development"
+2022-04-07 10:29:17.529 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\source\repos\JMusik\JMusik.WebApi"
+2022-04-07 10:29:30.225 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:29:31.242 -03:00 [Information] Executed DbCommand ("39"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username], [t].[Id], [t].[Cantidad], [t].[OrdenId], [t].[PrecioUnitario], [t].[ProductoId], [t].[Total], [t].[Id0], [t].[Estatus], [t].[FechaRegistro], [t].[Nombre], [t].[Precio]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[Cantidad], [d].[OrdenId], [d].[PrecioUnitario], [d].[ProductoId], [d].[Total], [p].[Id] AS [Id0], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+    FROM [tienda].[DetalleOrden] AS [d]
+    INNER JOIN [tienda].[Producto] AS [p] ON [d].[ProductoId] = [p].[Id]
+) AS [t] ON [o].[Id] = [t].[OrdenId]
+WHERE [o].[EstatusOrden] = 1
+ORDER BY [o].[Id], [u].[Id], [t].[Id]"
+2022-04-07 10:30:59.770 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-07 10:30:59.802 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-07 10:30:59.811 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-07 10:30:59.813 -03:00 [Information] Hosting environment: "Development"
+2022-04-07 10:30:59.814 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\source\repos\JMusik\JMusik.WebApi"
+2022-04-07 10:31:03.698 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:31:04.709 -03:00 [Information] Executed DbCommand ("41"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username], [t].[Id], [t].[Cantidad], [t].[OrdenId], [t].[PrecioUnitario], [t].[ProductoId], [t].[Total], [t].[Id0], [t].[Estatus], [t].[FechaRegistro], [t].[Nombre], [t].[Precio]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[Cantidad], [d].[OrdenId], [d].[PrecioUnitario], [d].[ProductoId], [d].[Total], [p].[Id] AS [Id0], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+    FROM [tienda].[DetalleOrden] AS [d]
+    INNER JOIN [tienda].[Producto] AS [p] ON [d].[ProductoId] = [p].[Id]
+) AS [t] ON [o].[Id] = [t].[OrdenId]
+WHERE [o].[EstatusOrden] = 1
+ORDER BY [o].[Id], [u].[Id], [t].[Id]"
+2022-04-07 10:31:31.432 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-07 10:31:31.465 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-07 10:31:31.477 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-07 10:31:31.479 -03:00 [Information] Hosting environment: "Development"
+2022-04-07 10:31:31.491 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\source\repos\JMusik\JMusik.WebApi"
+2022-04-07 10:31:34.107 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:31:35.307 -03:00 [Information] Executed DbCommand ("40"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username], [t].[Id], [t].[Cantidad], [t].[OrdenId], [t].[PrecioUnitario], [t].[ProductoId], [t].[Total], [t].[Id0], [t].[Estatus], [t].[FechaRegistro], [t].[Nombre], [t].[Precio]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[Cantidad], [d].[OrdenId], [d].[PrecioUnitario], [d].[ProductoId], [d].[Total], [p].[Id] AS [Id0], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+    FROM [tienda].[DetalleOrden] AS [d]
+    INNER JOIN [tienda].[Producto] AS [p] ON [d].[ProductoId] = [p].[Id]
+) AS [t] ON [o].[Id] = [t].[OrdenId]
+WHERE [o].[EstatusOrden] = 1
+ORDER BY [o].[Id], [u].[Id], [t].[Id]"
+2022-04-07 10:31:59.786 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-07 10:31:59.832 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-07 10:31:59.892 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-07 10:31:59.896 -03:00 [Information] Hosting environment: "Development"
+2022-04-07 10:31:59.903 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\source\repos\JMusik\JMusik.WebApi"
+2022-04-07 10:32:12.643 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:32:13.712 -03:00 [Information] Executed DbCommand ("42"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username], [t].[Id], [t].[Cantidad], [t].[OrdenId], [t].[PrecioUnitario], [t].[ProductoId], [t].[Total], [t].[Id0], [t].[Estatus], [t].[FechaRegistro], [t].[Nombre], [t].[Precio]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[Cantidad], [d].[OrdenId], [d].[PrecioUnitario], [d].[ProductoId], [d].[Total], [p].[Id] AS [Id0], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+    FROM [tienda].[DetalleOrden] AS [d]
+    INNER JOIN [tienda].[Producto] AS [p] ON [d].[ProductoId] = [p].[Id]
+) AS [t] ON [o].[Id] = [t].[OrdenId]
+WHERE [o].[EstatusOrden] = 1
+ORDER BY [o].[Id], [u].[Id], [t].[Id]"
+2022-04-07 10:32:46.652 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:32:46.660 -03:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username], [t].[Id], [t].[Cantidad], [t].[OrdenId], [t].[PrecioUnitario], [t].[ProductoId], [t].[Total], [t].[Id0], [t].[Estatus], [t].[FechaRegistro], [t].[Nombre], [t].[Precio]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+LEFT JOIN (
+    SELECT [d].[Id], [d].[Cantidad], [d].[OrdenId], [d].[PrecioUnitario], [d].[ProductoId], [d].[Total], [p].[Id] AS [Id0], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+    FROM [tienda].[DetalleOrden] AS [d]
+    INNER JOIN [tienda].[Producto] AS [p] ON [d].[ProductoId] = [p].[Id]
+) AS [t] ON [o].[Id] = [t].[OrdenId]
+WHERE [o].[EstatusOrden] = 1
+ORDER BY [o].[Id], [u].[Id], [t].[Id]"
+2022-04-07 10:58:52.193 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-07 10:58:52.294 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-07 10:58:52.308 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-07 10:58:52.313 -03:00 [Information] Hosting environment: "Development"
+2022-04-07 10:58:52.315 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\source\repos\JMusik\JMusik.WebApi"
+2022-04-07 10:58:58.332 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:59:00.561 -03:00 [Information] Executed DbCommand ("65"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username], [p].[Id], [p].[Nombre]
+FROM [tienda].[Usuario] AS [u]
+INNER JOIN [tienda].[Perfil] AS [p] ON [u].[PerfilId] = [p].[Id]
+WHERE ([u].[Id] = @__id_0) AND ([u].[Estatus] = 1)"
+2022-04-07 10:59:04.902 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:59:04.925 -03:00 [Information] Executed DbCommand ("8"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username], [p].[Id], [p].[Nombre]
+FROM [tienda].[Usuario] AS [u]
+INNER JOIN [tienda].[Perfil] AS [p] ON [u].[PerfilId] = [p].[Id]
+WHERE [u].[Estatus] = 1"
+2022-04-07 10:59:14.724 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-07 10:59:14.730 -03:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username], [p].[Id], [p].[Nombre]
+FROM [tienda].[Usuario] AS [u]
+INNER JOIN [tienda].[Perfil] AS [p] ON [u].[PerfilId] = [p].[Id]
+WHERE [u].[Estatus] = 1"
