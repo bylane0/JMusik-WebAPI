@@ -1,7 +1,4 @@
 ﻿using JMusik.Models.Enum;
-using System;
-using System.Collections.Generic;
-
 namespace JMusik.Models
 {
     public class Producto

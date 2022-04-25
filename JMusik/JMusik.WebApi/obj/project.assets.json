@@ -10138,11 +10138,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Juan Aubone\\source\\repos\\JMusik\\JMusik.WebApi\\JMusik.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.WebApi\\JMusik.WebApi.csproj",
       "projectName": "JMusik.WebApi",
-      "projectPath": "C:\\Users\\Juan Aubone\\source\\repos\\JMusik\\JMusik.WebApi\\JMusik.WebApi.csproj",
+      "projectPath": "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.WebApi\\JMusik.WebApi.csproj",
       "packagesPath": "C:\\Users\\Juan Aubone\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Juan Aubone\\source\\repos\\JMusik\\JMusik.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -10163,11 +10163,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Juan Aubone\\source\\repos\\JMusik\\JMusik.Data\\JMusik.Data.csproj": {
-              "projectPath": "C:\\Users\\Juan Aubone\\source\\repos\\JMusik\\JMusik.Data\\JMusik.Data.csproj"
+            "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.Data\\JMusik.Data.csproj": {
+              "projectPath": "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.Data\\JMusik.Data.csproj"
             },
-            "C:\\Users\\Juan Aubone\\source\\repos\\JMusik\\JMusik.Dtos\\JMusik.Dtos.csproj": {
-              "projectPath": "C:\\Users\\Juan Aubone\\source\\repos\\JMusik\\JMusik.Dtos\\JMusik.Dtos.csproj"
+            "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.Dtos\\JMusik.Dtos.csproj": {
+              "projectPath": "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.Dtos\\JMusik.Dtos.csproj"
             }
           }
         }

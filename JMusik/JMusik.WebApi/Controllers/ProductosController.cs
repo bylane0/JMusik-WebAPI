@@ -3,6 +3,7 @@ using AutoMapper;
 using JMusik.Data.Contratos;
 using JMusik.Dtos;
 using JMusik.Models;
+using JMusik.WebApi.Helpers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JMusik.WebApi.Controllers
@@ -23,6 +24,7 @@ namespace JMusik.WebApi.Controllers
             this._mapper = mapper;
             this._logger = logger;
         }
+        
         // GET: api/Productos
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -47,7 +49,7 @@ namespace JMusik.WebApi.Controllers
         public async Task<ActionResult<ProductoDTO>> Get(int ID)
         {
             var producto = await _productosRepositorio.ObtenerProductoAsync(ID);
-            if (producto == null)     
+            if (producto == null)
                 return NotFound();
             else
                 return _mapper.Map<ProductoDTO>(producto);
@@ -67,7 +69,7 @@ namespace JMusik.WebApi.Controllers
                 else
                 {
                     var nuevoProductoDTO = _mapper.Map<ProductoDTO>(nuevoProducto);
-                    return CreatedAtAction(nameof(Post), new {id=nuevoProductoDTO.Id}, nuevoProductoDTO);
+                    return CreatedAtAction(nameof(Post), new { id = nuevoProductoDTO.Id }, nuevoProductoDTO);
                     //Si se crea el producto devuelve el ID y el objeto.
                 }
             }
@@ -116,10 +118,35 @@ namespace JMusik.WebApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError($"Error en {nameof(Delete)}: ${ex.Message}");
-                return BadRequest();  
+                return BadRequest();
             }
-          
+
+        }
+        //EJEMPLO FUNCION PAGINACION
+        // GET: api/Productos
+        [Route("api/productos/porpagina")]
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<Paginador<ProductoDTO>>> GetPorPagina(
+            int paginaActual = 1, int registrosPorPagina = 3)
+        {
+            try
+            {
+                var resultado = await _productosRepositorio.ObtenerPaginasProductosAsync(
+                    paginaActual, registrosPorPagina); //Devuelve IEnumerable de tipo producto
+                var listaProductosDTO = _mapper.Map<List<ProductoDTO>>(resultado.registros); //mapeo el IEnumerable a DTO
+
+                return new Paginador<ProductoDTO>(listaProductosDTO, resultado.totalRegistros,
+                    paginaActual, registrosPorPagina);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error en {nameof(Get)}: ${ex.Message}");
+                return BadRequest();
+            }
         }
 
+        
     }
 }

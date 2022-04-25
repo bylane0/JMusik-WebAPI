@@ -1,9 +1,4 @@
 ﻿using JMusik.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JMusik.Data.Contratos
 {
@@ -15,6 +10,7 @@ namespace JMusik.Data.Contratos
         Task<Producto> Agregar(Producto producto);
         Task<bool> Actualizar(Producto producto);
         Task<bool> Eliminar(int id);
+        Task<(int totalRegistros, IEnumerable<Producto> registros)> ObtenerPaginasProductosAsync(int paginaActual, int registrosPorPagina);
     }
 
 }

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Juan Aubone\\source\\repos\\JMusik\\JMusik.Models\\JMusik.Models.csproj",
+      "projectUniqueName": "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.Models\\JMusik.Models.csproj",
       "projectName": "JMusik.Models",
-      "projectPath": "C:\\Users\\Juan Aubone\\source\\repos\\JMusik\\JMusik.Models\\JMusik.Models.csproj",
+      "projectPath": "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.Models\\JMusik.Models.csproj",
       "packagesPath": "C:\\Users\\Juan Aubone\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Juan Aubone\\source\\repos\\JMusik\\JMusik.Models\\obj\\",
+      "outputPath": "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "w3X9S2gb4AFY+rvq0T2FLGpMgW28jeJzbmrYqG4VAOQdymm6d5JjQEw6O2eGpSQFqTHRnIRiJaNyRnRw22sW+w==",
+  "dgSpecHash": "tIAhvCKCIdPCpX8ozVWOcrQnXbOzLutV/eK3IdnKTA4PlbW+dJjD/+HnFqE1pV7332dUQapJYzl5JjIJeZlH6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Juan Aubone\\source\\repos\\JMusik\\JMusik.WebApi\\JMusik.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.WebApi\\JMusik.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Juan Aubone\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\Juan Aubone\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

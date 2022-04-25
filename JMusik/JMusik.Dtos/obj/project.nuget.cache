@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vVzlMngaeYR0japrpBo0TzBFAjs1nzornY76Xo4qv8dcK1zX8guVOIDJiWu2BelJIb/AeXnTe95IEudOyuvs9w==",
+  "dgSpecHash": "XpFaLxiHEcNZwEHfr5O14KYHNRkD0Ri+fAej1bcIyJzE6qUaN5DDqNk+h/E73p8OYTKsYGnW7SFejQ0LeaO5vQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Juan Aubone\\source\\repos\\JMusik\\JMusik.Dtos\\JMusik.Dtos.csproj",
+  "projectFilePath": "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.Dtos\\JMusik.Dtos.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

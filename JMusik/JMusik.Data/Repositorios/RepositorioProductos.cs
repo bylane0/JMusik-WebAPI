@@ -60,7 +60,7 @@ namespace JMusik.Data.Repositorios
 
             var producto = await _contexto.Productos
                                 .SingleOrDefaultAsync(c => c.Id == id);
-            if(producto != null)
+            if (producto != null)
             {
                 producto.Estatus = EstatusProducto.Inactivo;
                 _contexto.Productos.Attach(producto);
@@ -78,16 +78,30 @@ namespace JMusik.Data.Repositorios
 
         }
 
-        public async Task<Producto> ObtenerProductoAsync(int id)
+        public async Task<(int totalRegistros, IEnumerable<Producto> registros)>
+            ObtenerPaginasProductosAsync(int paginaActual, int registrosPorPagina)
         {
-                return await _contexto.Productos
-                    .SingleOrDefaultAsync(c => c.Id == id && c.Estatus == EstatusProducto.Activo);
+            var totalRegistros = await _contexto.Productos
+                .Where(u => u.Estatus == EstatusProducto.Activo)
+                .CountAsync();
+            var registros = await _contexto.Productos
+                                            .Where(u => u.Estatus == EstatusProducto.Activo)
+                                            .Skip((paginaActual - 1) * registrosPorPagina)
+                                            .Take(registrosPorPagina)
+                                            .ToListAsync();
+            return (totalRegistros, registros);
+        }
 
+        public async Task<Producto> ObtenerProductoAsync(int id)
+        {   
+                var res =  await _contexto.Productos
+               .SingleOrDefaultAsync(c => c.Id == id && c.Estatus == EstatusProducto.Activo);
+                return res;
         }
 
         public async Task<List<Producto>> ObtenerProductosAsync()
         {
-            return await _contexto.Productos.Where(u=>u.Estatus == EstatusProducto.Activo)
+            return await _contexto.Productos.Where(u => u.Estatus == EstatusProducto.Activo)
                 .OrderBy(u => u.Nombre)
                                             .ToListAsync();
         }

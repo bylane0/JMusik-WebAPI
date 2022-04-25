@@ -1,0 +1,61 @@
+2022-04-08 10:34:42.685 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-08 10:34:42.786 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-08 10:34:42.833 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-08 10:34:42.842 -03:00 [Information] Hosting environment: "Development"
+2022-04-08 10:34:42.846 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\Desktop\apiweb\JMusik-WebAPI\JMusik\JMusik.WebApi"
+2022-04-08 10:34:49.405 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-08 10:34:51.896 -03:00 [Information] Executed DbCommand ("38"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [o].[Id], [o].[CantidadArticulos], [o].[EstatusOrden], [o].[FechaActualizacion], [o].[FechaRegistro], [o].[Importe], [o].[UsuarioId], [u].[Id], [u].[Apellidos], [u].[Email], [u].[Estatus], [u].[Nombre], [u].[Password], [u].[PerfilId], [u].[Username]
+FROM [tienda].[Orden] AS [o]
+INNER JOIN [tienda].[Usuario] AS [u] ON [o].[UsuarioId] = [u].[Id]
+WHERE [o].[EstatusOrden] = 1"
+2022-04-08 11:07:51.157 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-08 11:07:51.188 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-08 11:07:51.194 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-08 11:07:51.196 -03:00 [Information] Hosting environment: "Development"
+2022-04-08 11:07:51.197 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\Desktop\apiweb\JMusik-WebAPI\JMusik\JMusik.WebApi"
+2022-04-08 11:07:59.572 -03:00 [Error] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+JMusik.WebApi.Controllers.ProductosController.Get (JMusik.WebApi)
+JMusik.WebApi.Controllers.ProductosController.GetPorPagina (JMusik.WebApi)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, CandidateState[] candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-04-08 11:09:01.511 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-08 11:09:01.542 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-08 11:09:01.550 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-08 11:09:01.552 -03:00 [Information] Hosting environment: "Development"
+2022-04-08 11:09:01.553 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\Desktop\apiweb\JMusik-WebAPI\JMusik\JMusik.WebApi"
+2022-04-08 11:09:11.405 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-08 11:09:12.970 -03:00 [Information] Executed DbCommand ("34"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+FROM [tienda].[Producto] AS [p]
+WHERE [p].[Estatus] = 1
+ORDER BY [p].[Nombre]"
+2022-04-08 11:12:42.730 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-08 11:12:42.871 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-08 11:12:42.904 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-08 11:12:42.907 -03:00 [Information] Hosting environment: "Development"
+2022-04-08 11:12:42.928 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\Desktop\apiweb\JMusik-WebAPI\JMusik\JMusik.WebApi"
+2022-04-08 11:12:48.187 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-08 11:12:48.886 -03:00 [Information] Executed DbCommand ("35"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+FROM [tienda].[Producto] AS [p]
+WHERE [p].[Estatus] = 1
+ORDER BY [p].[Nombre]"
+2022-04-08 11:14:30.531 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-08 11:14:30.563 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-08 11:14:30.570 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-08 11:14:30.571 -03:00 [Information] Hosting environment: "Development"
+2022-04-08 11:14:30.573 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\Desktop\apiweb\JMusik-WebAPI\JMusik\JMusik.WebApi"
+2022-04-08 11:15:09.773 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-08 11:15:10.487 -03:00 [Information] Executed DbCommand ("36"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+FROM [tienda].[Producto] AS [p]
+WHERE [p].[Estatus] = 1
+ORDER BY [p].[Nombre]"

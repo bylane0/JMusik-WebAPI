@@ -12,6 +12,8 @@ namespace JMusik.Dtos
         [Display(Name = "Producto")]
         public string Nombre { get; set; }
         public decimal Precio { get; set; }
+
+      
     }
 
 }
