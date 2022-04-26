@@ -340,12 +340,6 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.Data\\JMusik.Data.csproj": {
-                "projectPath": "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.Data\\JMusik.Data.csproj"
-              },
-              "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.Dtos\\JMusik.Dtos.csproj": {
-                "projectPath": "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.Dtos\\JMusik.Dtos.csproj"
-              },
               "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.WebApi\\JMusik.WebApi.csproj": {
                 "projectPath": "C:\\Users\\Juan Aubone\\Desktop\\BDT\\apiweb\\JMusik-WebAPI\\JMusik\\JMusik.WebApi\\JMusik.WebApi.csproj"
               }
@@ -362,10 +356,6 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.AspNet.WebApi.Core": {
-              "target": "Package",
-              "version": "[5.2.8, )"
-            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.11.0, )"
