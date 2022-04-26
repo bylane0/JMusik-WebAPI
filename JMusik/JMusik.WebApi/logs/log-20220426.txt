@@ -1,0 +1,33 @@
+2022-04-26 09:29:23.126 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-26 09:29:23.163 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-26 09:29:23.170 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-26 09:29:23.172 -03:00 [Information] Hosting environment: "Development"
+2022-04-26 09:29:23.174 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\Desktop\BDT\apiweb\JMusik-WebAPI\JMusik\JMusik.WebApi"
+2022-04-26 09:29:25.501 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-26 09:29:28.153 -03:00 [Information] Executed DbCommand ("78"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+FROM [tienda].[Producto] AS [p]
+WHERE [p].[Estatus] = 1
+ORDER BY [p].[Nombre]"
+2022-04-26 09:29:39.508 -03:00 [Information] Application is shutting down...
+2022-04-26 09:50:29.176 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-26 09:50:29.206 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-26 09:50:29.213 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-26 09:50:29.215 -03:00 [Information] Hosting environment: "Development"
+2022-04-26 09:50:29.216 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\Desktop\BDT\apiweb\JMusik-WebAPI\JMusik\JMusik.WebApi"
+2022-04-26 11:15:36.043 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-26 11:15:36.073 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-26 11:15:36.079 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-26 11:15:36.081 -03:00 [Information] Hosting environment: "Development"
+2022-04-26 11:15:36.082 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\Desktop\BDT\apiweb\JMusik-WebAPI\JMusik\JMusik.WebApi"
+2022-04-26 11:20:46.575 -03:00 [Information] Now listening on: "https://localhost:5001"
+2022-04-26 11:20:46.608 -03:00 [Information] Now listening on: "http://localhost:5000"
+2022-04-26 11:20:46.616 -03:00 [Information] Application started. Press Ctrl+C to shut down.
+2022-04-26 11:20:46.618 -03:00 [Information] Hosting environment: "Development"
+2022-04-26 11:20:46.621 -03:00 [Information] Content root path: "C:\Users\Juan Aubone\Desktop\BDT\apiweb\JMusik-WebAPI\JMusik\JMusik.WebApi"
+2022-04-26 11:20:57.610 -03:00 [Information] Entity Framework Core "6.0.3" initialized '"TiendaDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.3"' with options: "None"
+2022-04-26 11:20:59.234 -03:00 [Information] Executed DbCommand ("36"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Estatus], [p].[FechaRegistro], [p].[Nombre], [p].[Precio]
+FROM [tienda].[Producto] AS [p]
+WHERE [p].[Estatus] = 1
+ORDER BY [p].[Nombre]"

@@ -17,14 +17,36 @@ namespace JMusik.WebApi.Controllers
         private readonly ILogger<ProductosController> _logger;
 
         public ProductosController(IProductosRepositorio productosRepositorio,
-            IMapper mapper,
-            ILogger<ProductosController> logger)
+            IMapper mapper/*,
+            ILogger<ProductosController> logger*/)
         {
             _productosRepositorio = productosRepositorio;
             this._mapper = mapper;
-            this._logger = logger;
+            /* this._logger = logger;*/
         }
-        
+
+        // GET: api/Productos
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<IEnumerable<ProductoDTO>>> GetThrowOkResult()
+        {
+            try
+            {
+                var productos = await _productosRepositorio.ObtenerProductosAsync();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error en {nameof(Get)}: ${ex.Message}");
+                return BadRequest();
+            }
+        }
+
+
+
+
+
         // GET: api/Productos
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
